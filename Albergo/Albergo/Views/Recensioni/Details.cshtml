@@ -1,0 +1,58 @@
+﻿@model Albergo.Models.Recensioni
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recensioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestoRecensione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestoRecensione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Approvata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approvata)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdReview }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

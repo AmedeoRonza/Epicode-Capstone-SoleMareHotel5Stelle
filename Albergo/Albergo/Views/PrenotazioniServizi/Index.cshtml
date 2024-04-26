@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Albergo.Models.PrenotazioniServizi>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+
+<h2  style="margin-top:2rem;">Lista Servizi</h2>
+
+
+<table class="table">
+    <tr>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Prenotazioni.Nome)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Servizi.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInizioServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFineServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Prenotazioni.Nome)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Servizi.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInizioServizio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFineServizio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezzo)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.ActionLink("Modifica", "Edit", new { id = item.IdChiave }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdChiave }, new { @class = "btn btn-danger" })
+                </td>
+            }
+        </tr>
+    }
+
+</table>

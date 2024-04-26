@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Albergo.Models.Camere>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+
+<h2 style="margin-top:2rem;">Mappa della struttura</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Piano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCamera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Piano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroCamera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezzo)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.ActionLink("Modifica", "Edit", new { id = item.IdCamera }, new { @class = "btn btn-primary" })
+                </td>
+            }
+        </tr>
+    }
+</table>

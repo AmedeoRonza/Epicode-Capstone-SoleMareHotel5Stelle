@@ -1,0 +1,58 @@
+﻿@model Albergo.Models.Camere
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Camere</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Piano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Piano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCamera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCamera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCamera }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

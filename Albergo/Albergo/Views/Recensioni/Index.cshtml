@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Albergo.Models.Recensioni>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+
+<h2 style="margin-top:2rem;">Angolo Recensioni</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Voto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestoRecensione)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestoRecensione)
+            </td>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.ActionLink("Modifica", "Edit", new { id = item.IdReview }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdReview }, new { @class = "btn btn-danger ml-1" })
+                </td>
+            }
+        </tr>
+    }
+</table>

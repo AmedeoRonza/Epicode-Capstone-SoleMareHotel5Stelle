@@ -1,0 +1,210 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<!-- Il resto del codice della vista qui -->
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>keto</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+<body class="main-layout">
+    <!-- loader  -->
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+
+    </header>
+    <!-- end header inner -->
+    <!-- end header -->
+    <!-- banner -->
+    <section class="banner_main">
+        <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="/images/banner1.jpg" alt="First slide">
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="/images/banner2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="/images/banner3.jpg" alt="Third slide">
+                </div>
+            </div>
+            @*<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>*@
+        </div>
+    </section>
+    <!-- end banner -->
+    <!-- about -->
+    <div class="about">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Centrare la riga -->
+                <div class="col-md-4">
+                    <!-- Centrare il contenuto della colonna -->
+                    <div class="titlepage text-center">
+                        <h2>Chi Siamo</h2>
+                        <h3>Sole Mare, un'oasi di tranquillità situata nell'incantevole Scoglitti, dove il mare cristallino abbraccia la costa dorata e il sole bacia le giornate di vacanza. L'avventura di Sole Mare ha inizio molti decenni fa, in un'epoca in cui la determinazione e il duro lavoro erano la moneta corrente. I fondatori, una famiglia locale intraprendente, si misero all'opera con tenacia e dedizione per trasformare un modesto edificio sulla costa in quello che è diventato oggi un'icona dell'ospitalità siciliana. Ogni sorriso che riusciamo a regalare, ogni momento di felicità che i nostri ospiti trascorrono con noi, è la realizzazione dei sogni che hanno alimentato la nostra storia. Benvenuti a Sole Mare, dove i sogni diventano realtà e gli ospiti diventano famiglia.</h3>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="about_img">
+                        <figure><img src="/images/about.png" alt="#" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- blog -->
+    <div class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Servizi Gratuiti</h2>
+                        <p>Compreso nel prezzo la nostra struttura vi offre</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blog_box">
+                        <div class="blog_img">
+                            <figure><img src="/images/blog1.jpg" alt="#" /></figure>
+                        </div>
+                        <div class="blog_room">
+                            <h3>Servizio Navetta</h3>
+                            <span>Da e per l'aeroporto</span>
+                            <p>La nostra navetta dedicata offre un trasporto sicuro e affidabile da e per l'aeroporto o la stazione ferroviaria, garantendo agli ospiti un arrivo comodo e senza problemi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog_box">
+                        <div class="blog_img">
+                            <figure><img src="/images/blog2.jpg" alt="#" /></figure>
+                        </div>
+                        <div class="blog_room">
+                            <h3>Wi-Fi gratuito</h3>
+                            <span>In tutta la struttura</span>
+                            <p>Sfrutta liberamente il Wi-Fi gratuito durante la tua permanenza, assicurandoti una connessione senza costi aggiuntivi in tutta la struttura, per rimanere connesso ovunque.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog_box">
+                        <div class="blog_img">
+                            <figure><img src="/images/blog3.jpg" alt="#" /></figure>
+                        </div>
+                        <div class="blog_room">
+                            <h3>Servizio in camera</h3>
+                            <span>24h su 24</span>
+                            <p>Goditi la comodità del servizio in camera disponibile 24 ore su 24, pronto a soddisfare le tue esigenze e offrirti comfort senza interruzioni durante il tuo soggiorno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end blog -->
+    <!--  contact -->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Contattaci o Vienici a trovare</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="request" class="main_form">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <input class="contactus" placeholder="Name" type="text" name="Name">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Email" type="text" name="Email">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message</textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="send_btn">Invia!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="map_main">
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5367.933313106584!2d14.449193078213039!3d36.871391395842295!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1714054571981!5m2!1sit!2sit" width="800" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+    <!--  footer -->
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/custom.js"></script>
+</body>
+</html>

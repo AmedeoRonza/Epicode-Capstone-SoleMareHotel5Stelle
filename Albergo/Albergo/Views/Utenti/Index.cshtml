@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Albergo.Models.Utenti>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+<h2 style="margin-top:2rem;">Elenco Iscritti</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.ConfermaPassword)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Ruolo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ConfermaPassword)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Ruolo)
+            </td>
+            <td>
+                @Html.ActionLink("Modifica", "Edit", new { id = item.IdUtente }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdUtente }, new { @class = "btn btn-danger ml-1" })
+            </td>
+        </tr>
+    }
+
+</table>

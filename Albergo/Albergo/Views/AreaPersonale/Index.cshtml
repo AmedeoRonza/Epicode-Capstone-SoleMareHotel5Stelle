@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Albergo.Models.Prenotazioni>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+
+<h2 style="margin-top:2rem;">Le tue prenotazioni</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Citta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCheckIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCheckOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoStanza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Citta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCheckOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoStanza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezzo)
+            </td>
+            <td>
+                @Html.ActionLink("Dettagli Servizi", "Index", "PrenotazioniServizi", new { idPrenotazione = item.IdPrenotazione }, new { @class = "btn btn-info" })
+            </td>
+            <td>
+                @if (item.DataCheckOut <= DateTime.Now) // Mostra il link solo se la data di checkout è nel passato
+                {
+                    @Html.ActionLink("Lascia una recensione", "Create", "Recensioni", null, new { @class = "btn btn-warning" })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

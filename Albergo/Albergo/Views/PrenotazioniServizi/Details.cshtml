@@ -1,0 +1,58 @@
+﻿@model Albergo.Models.PrenotazioniServizi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PrenotazioniServizi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenotazioni.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prenotazioni.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servizi.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servizi.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInizioServizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInizioServizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFineServizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFineServizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdChiave }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

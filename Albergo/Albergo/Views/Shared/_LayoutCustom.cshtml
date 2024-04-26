@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/css/style.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="@Url.Action("Index", "Home")" class="logo"><img src="/images/logo.png" alt="Logo" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                            <ul class="navbar-nav mr-auto">
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li>@Html.ActionLink("Registrati", "Create", "Utenti", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Galleria", "Index", "Galleria", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("La Struttura", "Index", "Camere", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("I Nostri Servizi", "Index", "Servizi", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Dicono di noi", "Index", "Recensioni", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Login", "Login", "Utenti", new { area = "" }, new { @class = "nav-link" })</li>
+                                }
+                                @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                                {
+                                    <li>@Html.ActionLink("Prenotazione", "Create", "Prenotazioni", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Area Personale", "Index", "Areapersonale", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Galleria", "Index", "Galleria", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("La Struttura", "Index", "Camere", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("I Nostri Servizi", "Index", "Servizi", new { area = "" }, new { @class = "nav-link" })</li>
+
+                                    <li>@Html.ActionLink("Logout", "Logout", "Utenti", null, new { @class = "nav-link" })</li>
+                                }
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+                                    <li>@Html.ActionLink("Storico", "Index", "Prenotazioni", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Elenco Iscritti", "Index", "Utenti", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("La Struttura", "Index", "Camere", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("I Nostri Servizi", "Index", "Servizi", new { area = "" }, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Recensioni", "Pending", "Recensioni", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Dicono di noi", "Index", "Recensioni", null, new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Logout", "Logout", "Utenti", null, new { @class = "nav-link" })</li>
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-4">
+                        <h3>Contatti</h3>
+                        <ul class="conta">
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
+                            <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li>
+                            <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> Solemare@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>News letter</h3>
+                        <form class="bottom_form">
+                            <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                            <button class="sub_btn">subscribe</button>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>I nostri Social</h3>
+                        <ul class="social_icon">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="row">
+                            <div class="justify-content-end">
+                                <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

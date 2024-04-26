@@ -1,0 +1,90 @@
+﻿@model Albergo.Models.Prenotazioni
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prenotazioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Citta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Citta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCheckIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCheckIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCheckOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCheckOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoStanza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoStanza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPrenotazione }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

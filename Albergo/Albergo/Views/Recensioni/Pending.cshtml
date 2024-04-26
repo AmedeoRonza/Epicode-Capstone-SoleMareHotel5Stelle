@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Albergo.Models.Recensioni>
+
+@{
+    ViewBag.Title = "Recensioni in attesa di approvazione";
+}
+@Styles.Render("~/Content/css")
+
+<h2 style="margin-top:2rem;">Recensioni in attesa di approvazione</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cognome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestoRecensione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Approvata)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (!item.Approvata) // Filtra solo le recensioni non approvate
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cognome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Voto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestoRecensione)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Approvata)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Modifica", "Edit", new { id = item.IdReview }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdReview }, new { @class = "btn btn-danger" })
+                        <br />
+                        @using (Html.BeginForm("Approve", "Recensioni", new { id = item.IdReview }, FormMethod.Post, new { @class = "form-inline" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-success mt-2">Approva Recensione</button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+}
+else
+{
+    <p>Non ci sono recensioni in attesa di approvazione al momento.</p>
+}

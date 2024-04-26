@@ -1,0 +1,58 @@
+﻿@model Albergo.Models.Galleria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Galleria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoStanza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoStanza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Img1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Img2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Img3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdGalleria }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
